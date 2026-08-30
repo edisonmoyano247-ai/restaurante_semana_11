@@ -1,0 +1,29 @@
+[
+    {
+        "codigo": "P001",
+        "nombre": "Spagueti",
+        "precio": "5",
+        "categoria": "ESPECIAL",
+        "tipo": "PEDIDO",
+        "disponible": false,
+        "stock": 0
+    },
+    {
+        "codigo": "P002",
+        "nombre": "HORNADO",
+        "precio": "6",
+        "categoria": "ESPECIAL",
+        "tipo": "VENTA",
+        "disponible": false,
+        "stock": 0
+    },
+    {
+        "codigo": "P003",
+        "nombre": "CUY ASADO",
+        "precio": "7",
+        "categoria": "FUERTE",
+        "tipo": "PEDIDO",
+        "disponible": false,
+        "stock": 5
+    }
+]

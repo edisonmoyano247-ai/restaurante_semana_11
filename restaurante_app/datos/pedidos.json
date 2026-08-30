@@ -1,0 +1,27 @@
+[
+    {
+        "cliente_id": "C4001",
+        "producto_codigo": "P001",
+        "activo": true
+    },
+    {
+        "cliente_id": "C002",
+        "producto_codigo": "P002",
+        "activo": true
+    },
+    {
+        "cliente_id": "C003",
+        "producto_codigo": "P003",
+        "activo": true
+    },
+    {
+        "cliente_id": "C004",
+        "producto_codigo": "P001",
+        "activo": false
+    },
+    {
+        "cliente_id": "C005",
+        "producto_codigo": "P002",
+        "activo": false
+    }
+]
