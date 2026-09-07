@@ -109,7 +109,7 @@ class Producto:
     @property
     def estado(self) -> str:
         # El estado se muestra segun el tipo de producto.
-        # Aqui se ve la diferencia pedagogica: venta muestra stock.
+        # venta muestra stock.
         if self.es_de_venta():
             return f"Stock: {self.stock}"
         # Pedido muestra disponibilidad.

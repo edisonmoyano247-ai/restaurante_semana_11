@@ -26,6 +26,7 @@ OPCIONES_MENU = (
 )
 
 
+
 # Funciones pequenas para entrada por consola.
 # La logica importante queda en RestauranteServicio.
 def pedir_texto(mensaje: str) -> str:
@@ -79,7 +80,6 @@ def guardar_pedidos(
     archivo_servicio: ArchivoServicio,
     restaurante: RestauranteServicio,
 ) -> None:
-    # MEJORA SEMANA 11: los pedidos ahora se guardan en su propio JSON.
     # Guardado automatico despues de pedir o cancelar.
     guardado = archivo_servicio.guardar_pedidos(restaurante.listar_pedidos())
     if not guardado:
@@ -87,7 +87,6 @@ def guardar_pedidos(
 
 
 def guardar_ventas(archivo_servicio: ArchivoServicio, restaurante: RestauranteServicio) -> None:
-    # MEJORA SEMANA 11: las ventas ahora se guardan en su propio JSON.
     # Guardado automatico despues de vender.
     guardado = archivo_servicio.guardar_ventas(restaurante.listar_ventas())
     if not guardado:
@@ -244,7 +243,6 @@ def actualizar_cliente(
         print("Cliente no encontrado.")
         return
 
-    # CORRECCIÓN: Se cambió 'nuevo_precio' por 'nuevo_nombre'
     nuevo_nombre = pedir_texto("Nuevo nombre: ")
 
     try:
@@ -287,8 +285,6 @@ def listar_clientes(restaurante: RestauranteServicio) -> None:
 
 
 def pedir_producto(restaurante: RestauranteServicio, archivo_servicio: ArchivoServicio) -> None:
-    # MEJORA SEMANA 11: opcion del menu para crear un pedido.
-    # Semana 11: desde esta opcion del menu se demuestra PEDIR.
     print("\n--- Pedir producto ---")
     codigo_producto = pedir_texto("Codigo del producto: ")
     identificacion_cliente = pedir_texto("Identificacion del cliente: ")
@@ -321,8 +317,6 @@ def pedir_producto(restaurante: RestauranteServicio, archivo_servicio: ArchivoSe
 
 
 def devolver_producto(restaurante: RestauranteServicio, archivo_servicio: ArchivoServicio) -> None:
-    # MEJORA SEMANA 11: opcion del menu para cerrar un pedido.
-    # Semana 11: desde esta opcion se demuestra CANCELAR/DEVOLVER.
     print("\n--- Devolver producto ---")
     codigo_producto = pedir_texto("Codigo del producto: ")
     identificacion_cliente = pedir_texto("Identificacion del cliente: ")
@@ -338,8 +332,6 @@ def devolver_producto(restaurante: RestauranteServicio, archivo_servicio: Archiv
 
 
 def vender_producto(restaurante: RestauranteServicio, archivo_servicio: ArchivoServicio) -> None:
-    # MEJORA SEMANA 11: opcion del menu para registrar una venta.
-    # Semana 11: desde esta opcion se demuestra VENDER.
     print("\n--- Vender producto ---")
     codigo_producto = pedir_texto("Codigo del producto: ")
     identificacion_cliente = pedir_texto("Identificacion del cliente: ")
@@ -376,8 +368,6 @@ def vender_producto(restaurante: RestauranteServicio, archivo_servicio: ArchivoS
 
 
 def consultar_operaciones_cliente(restaurante: RestauranteServicio) -> None:
-    # MEJORA SEMANA 11: opcion del menu para ver relaciones de un cliente.
-    # Semana 11: aqui se recorren relaciones ya creadas para un cliente.
     print("\n--- Operaciones de cliente ---")
     identificacion = pedir_texto("Identificacion del cliente: ")
     cliente = restaurante.buscar_cliente(identificacion)
@@ -430,7 +420,6 @@ def listar_categorias_unicas(restaurante: RestauranteServicio) -> None:
 def ejecutar_menu() -> None:
     ruta_datos = Path(__file__).resolve().parent / "datos"
     archivo_servicio = ArchivoServicio(str(ruta_datos))
-    # MEJORA SEMANA 11: se restauran las cuatro colecciones al iniciar.
     # Al iniciar: JSON -> objetos -> colecciones dentro de RestauranteServicio.
     restaurante = RestauranteServicio(
         archivo_servicio.cargar_productos(),

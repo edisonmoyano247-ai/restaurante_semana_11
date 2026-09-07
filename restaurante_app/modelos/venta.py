@@ -1,7 +1,5 @@
 class Venta:
-    # Se agrego un modelo para registrar ventas como objetos.
-    # El actual modelo representa la relacion Cliente + Producto vendido.
-    # La cantidad permite explicar cuanto stock se disminuye.
+    # La cantidad permite explicar cuanto stock se descuenta.
     def __init__(self, cliente_id: str, producto_codigo: str, cantidad: int = 1) -> None:
         self.cliente_id = cliente_id
         self.producto_codigo = producto_codigo

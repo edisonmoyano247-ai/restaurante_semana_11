@@ -1,7 +1,5 @@
 class Pedido:
-    # MEJORA SEMANA 11: se agrega un modelo para representar pedidos de productos en este caso al
-    #al ser un resaurante este modelo representa la relacion Cliente y pedido del producto.
-    # Mientras activo sea True, el producto fue hecho el pedido y se espera el retiro para llevar por el cliente.
+    # MEJORA SEMANA 12: Mientras activo sea True, el libro esta prestado.
     def __init__(self, cliente_id: str, producto_codigo: str, activo: bool = True) -> None:
         self.cliente_id = cliente_id
         self.producto_codigo = producto_codigo

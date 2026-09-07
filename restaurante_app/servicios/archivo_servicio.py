@@ -9,8 +9,6 @@ from modelos.venta import Venta
 
 class ArchivoServicio:
     def __init__(self, ruta_datos: str = "datos") -> None:
-        # Se agregan archivos JSON para clientes, pedidos y ventas.
-        # Ahora persistimos cuatro colecciones importantes.
         self._ruta_datos = Path(ruta_datos)
         self._ruta_productos = self._ruta_datos / "productos.json"
         self._ruta_clientes = self._ruta_datos / "clientes.json"
@@ -50,7 +48,7 @@ class ArchivoServicio:
         datos = []
         for producto in productos:
             datos.append(producto.convertir_a_diccionario())
-        return self._guardar_lista(self._ruta_productos, datos, "productos")  # CORREGIDO: _ruta_productos y "productos"
+        return self._guardar_lista(self._ruta_productos, datos, "productos")  
 
     def cargar_clientes(self) -> list[Cliente]:
         # JSON -> objetos Usuario.
@@ -79,7 +77,6 @@ class ArchivoServicio:
         return self._guardar_lista(self._ruta_clientes, datos, "usuarios")
 
     def cargar_pedidos(self) -> list[Pedido]:
-        # Los pedidos se cargan para recuperar relaciones.
         # JSON -> objetos Pedidos que reconstruyen relaciones activas.
         datos = self._leer_lista(self._ruta_pedidos, "pedidos")
         pedidos: list[Pedido] = []
